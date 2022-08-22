@@ -3,13 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vue-cli-service serve --mode dev",
+    "qa": "vue-cli-service serve --mode qa",
+    "stag": "vue-cli-service serve --mode staging",
+    "prod": "vue-cli-service serve --mode prod",
+    "build-dev": "vue-cli-service build --mode dev && npm run concat",
+    "build-qa": "vue-cli-service build --mode qa && npm run concat",
+    "build-stag": "vue-cli-service build --mode staging && npm run concat",
+    "build-prod": "vue-cli-service build --mode prod && npm run concat",
+    "concat": "node concat.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios-observable": "^1.5.0",
     "core-js": "^3.8.3",
+    "rxjs": "^7.5.6",
     "vue": "^3.2.13"
   },
   "devDependencies": {
@@ -25,14 +34,15 @@
     "@vue/test-utils": "^2.0.0-0",
     "@vue/vue3-jest": "^27.0.0-alpha.1",
     "babel-jest": "^27.0.6",
+    "concat-files": "^0.1.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
     "jest": "^27.0.5",
     "prettier": "^2.4.1",
-    "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
+    "sass": "^1.54.5",
+    "sass-loader": "^12.6.0",
     "ts-jest": "^27.0.4",
     "typescript": "~4.5.5"
   }
