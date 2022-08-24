@@ -1,3 +1,6 @@
-<div>mensaje => {{ msg }}</div>
-<div class="api">api => {{ API_PAYMENTS }}</div>
-<widget-example send="hola"></widget-example>
+<h1 class="msg">mensaje externo => {{ msg }}</h1>
+<h2 class="api">Entorno => {{ API_PAYMENTS }}</h2>
+<div class="container">
+    <div class="webc">web component external</div>
+    <widget-example :send="TestObject" />
+</div>
